@@ -45,11 +45,10 @@
             font-weight: bold;
             display: flex;
             align-items: center;
-            padding: 0.5rem;
             width: 100%;
-            justify-content: space-between;
+            justify-content: flex-start;
             background-color: #fff;
-            padding: 0.8rem 1rem;
+            padding: 1rem;
         }
 
         .menu-toggle {
@@ -79,11 +78,16 @@
             }
 
             .nav-logo {
-                font-size: 1.4rem;
+                font-size: 1.2rem;
+                padding: 0.8rem;
             }
 
             .nav-logo img {
-                height: 35px;
+                height: 32px;
+            }
+
+            .nav-logo span {
+                font-size: 1.1rem;
             }
 
             .nav-links {
@@ -133,7 +137,8 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
             letter-spacing: 1px;
             transition: all 0.3s ease;
-            margin-left: 4px;
+            font-size: 1.4rem;
+            white-space: nowrap;
         }
 
         .nav-logo span:hover {
@@ -142,8 +147,9 @@
         }
 
         .nav-logo img {
-            height: 50px;
+            height: 45px;
             width: auto;
+            margin-right: 12px;
         }
 
         .nav-links {
@@ -164,6 +170,13 @@
 
             .nav-logo img {
                 height: 40px;
+            }
+
+            .nav-logo div {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                padding-right: 1rem;
             }
 
             .nav-links {
