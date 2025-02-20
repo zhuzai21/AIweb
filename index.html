@@ -37,18 +37,92 @@
             align-items: center;
             max-width: 1200px;
             margin: 0 auto;
+            position: relative;
         }
 
         .nav-logo {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: bold;
             display: flex;
             align-items: center;
             padding: 0.5rem;
             width: 100%;
-            justify-content: flex-start;
+            justify-content: space-between;
             background-color: #fff;
-            padding-left: 2rem;
+            padding: 0.8rem 1rem;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 1rem;
+            width: 100%;
+            background-color: var(--secondary-color);
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-logo {
+                font-size: 1.4rem;
+            }
+
+            .nav-logo img {
+                height: 35px;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                flex-direction: column;
+                gap: 0;
+                width: 100%;
+                padding: 0;
+                background-color: #fff;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                transform: translateY(-100%);
+                opacity: 0;
+                pointer-events: none;
+                z-index: -1;
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                pointer-events: auto;
+                z-index: 1000;
+            }
+
+            .nav-links a {
+                width: 100%;
+                padding: 1rem;
+                text-align: center;
+                border-bottom: 1px solid #eee;
+            }
+
+            .nav-links a:last-child {
+                border-bottom: none;
+            }
+
+            .banner {
+                margin-top: 60px;
+            }
         }
 
         .nav-logo span {
@@ -344,8 +418,11 @@
     <header class="header">
         <nav class="nav">
             <div class="nav-logo">
-                <img src="./public/images/logo.PNG" alt="AI商业科技实验室Logo">
-                <span>AI商业科技实验室</span>
+                <div style="display: flex; align-items: center;">
+                    <img src="./public/images/logo.PNG" alt="AI商业科技实验室Logo">
+                    <span>AI商业科技实验室</span>
+                </div>
+                <button class="menu-toggle" aria-label="切换菜单">☰</button>
             </div>
             <div class="nav-links">
                 <a href="#">首页</a>
@@ -526,6 +603,30 @@
             card.style.transform = 'translateY(20px)';
             card.style.transition = 'opacity 0.5s, transform 0.5s';
             observer.observe(card);
+        });
+
+        // 添加菜单切换功能
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // 点击导航链接时关闭菜单
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+
+        // 滚动时隐藏菜单
+        window.addEventListener('scroll', () => {
+            if (window.innerWidth <= 768 && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+            }
         });
     </script>
 </body>
