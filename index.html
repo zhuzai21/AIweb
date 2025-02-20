@@ -23,47 +23,160 @@
         }
 
         .header {
-            background-color: var(--primary-color);
-            color: var(--secondary-color);
-            padding: 1rem;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .nav {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .nav-logo {
-            font-size: 1.5rem;
+            font-size: 2rem;
             font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.2rem;
+            padding: 1rem;
+            width: 100%;
+            justify-content: center;
+            background-color: #fff;
+        }
+
+        .nav-logo span {
+            background-image: linear-gradient(45deg, #003366, #0066cc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-logo span:hover {
+            transform: scale(1.05);
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-logo img {
+            height: 50px;
+            width: auto;
         }
 
         .nav-links {
             display: flex;
             gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 1rem;
+            width: 100%;
+            background-color: var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+            .nav-logo {
+                font-size: 1.4rem;
+                padding: 0.8rem;
+            }
+
+            .nav-logo img {
+                height: 40px;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                padding: 0.8rem;
+            }
+
+            .nav-links a {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.9rem;
+            }
+
+            .banner {
+                margin-top: 100px;
+                height: 70vh;
+            }
+
+            .banner-content h1 {
+                font-size: 1.8rem;
+            }
+
+            .banner-content p {
+                font-size: 1rem;
+            }
+
+            .section {
+                padding: 3rem 1rem;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .research-content {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form {
+                padding: 0 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-logo {
+                font-size: 1.2rem;
+            }
+
+            .nav-logo img {
+                height: 35px;
+            }
+
+            .banner-content h1 {
+                font-size: 1.5rem;
+            }
+
+            .banner-content p {
+                font-size: 0.9rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .card h3 {
+                font-size: 1.2rem;
+            }
         }
 
         .nav-links a {
-            color: var(--secondary-color);
+            color: var(--primary-color);
             text-decoration: none;
-            transition: opacity 0.3s;
+            transition: all 0.3s;
+            white-space: nowrap;
+            padding: 0.5rem 1rem;
+            font-weight: 500;
         }
 
         .nav-links a:hover {
-            opacity: 0.8;
+            opacity: 1;
+            color: #004c99;
+            transform: translateY(-2px);
         }
 
         .banner {
             height: 100vh;
             position: relative;
-            margin-top: 60px;
+            margin-top: 120px;
             overflow: hidden;
         }
 
@@ -216,7 +329,10 @@
 <body>
     <header class="header">
         <nav class="nav">
-            <div class="nav-logo">AI商业科技实验室</div>
+            <div class="nav-logo">
+                <img src="./public/images/logo.PNG" alt="AI商业科技实验室Logo">
+                <span>AI商业科技实验室</span>
+            </div>
             <div class="nav-links">
                 <a href="#">首页</a>
                 <a href="#about">关于我们</a>
@@ -229,19 +345,19 @@
 
     <section class="banner">
         <div class="banner-slider">
-            <div class="banner-slide active" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')">
+            <div class="banner-slide active" style="background-image: url('./public/images/banner1.jpg')">
                 <div class="banner-content">
                     <h1>引领AI技术创新</h1>
                     <p>致力于人工智能技术研究与商业应用，为企业提供智能化解决方案</p>
                 </div>
             </div>
-            <div class="banner-slide" style="background-image: url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')">
+            <div class="banner-slide" style="background-image: url('./public/images/banner2.jpg')">
                 <div class="banner-content">
                     <h1>深度学习与机器视觉</h1>
                     <p>运用前沿技术，打造智能化未来</p>
                 </div>
             </div>
-            <div class="banner-slide" style="background-image: url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')">
+            <div class="banner-slide" style="background-image: url('./public/images/banner3.jpg')">
                 <div class="banner-content">
                     <h1>数据驱动决策</h1>
                     <p>用AI技术助力企业数字化转型</p>
