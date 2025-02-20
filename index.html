@@ -46,6 +46,70 @@
             display: flex;
             align-items: center;
             width: 100%;
+            justify-content: space-between;
+            background-color: #fff;
+            padding: 0.8rem 1rem;
+        }
+
+        .nav-logo div {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-logo img {
+            height: 100px;
+            width: auto;
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .nav-logo img {
+                height: 80px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-logo img {
+                height: 60px;
+            }
+        }
+
+        .nav-logo span {
+            background-image: linear-gradient(45deg, #003366, #0066cc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            font-size: 1.6rem;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 768px) {
+            .nav-logo {
+                padding: 0.6rem;
+            }
+
+            .nav-logo img {
+                height: 60px;
+            }
+
+            .nav-logo span {
+                font-size: 1.4rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-logo img {
+                height: 50px;
+            }
+
+            .nav-logo span {
+                font-size: 1.2rem;
+            }
+        }
             justify-content: flex-start;
             background-color: #fff;
             padding: 1rem;
@@ -83,11 +147,11 @@
             }
 
             .nav-logo img {
-                height: 32px;
+                height: 38px;
             }
 
             .nav-logo span {
-                font-size: 1.1rem;
+                font-size: 1.4rem;
             }
 
             .nav-links {
@@ -137,7 +201,7 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
             letter-spacing: 1px;
             transition: all 0.3s ease;
-            font-size: 1.4rem;
+            font-size: 1.8rem;
             white-space: nowrap;
         }
 
@@ -147,9 +211,28 @@
         }
 
         .nav-logo img {
-            height: 45px;
-            width: auto;
-            margin-right: 12px;
+            margin-right: 20px;
+        }
+
+        .nav-logo span {
+            background-image: linear-gradient(45deg, #003366, #0066cc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            font-size: 2rem;
+            white-space: nowrap;
+        }
+
+        .nav-logo span:hover {
+            transform: scale(1.05);
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-logo img {
+            margin-right: 10px;
         }
 
         .nav-links {
@@ -238,7 +321,7 @@
             }
 
             .nav-logo img {
-                height: 35px;
+                height: 40px;
             }
 
             .banner-content h1 {
@@ -335,6 +418,92 @@
             scroll-margin-top: 60px;
         }
 
+        .tech-section {
+            background-color: #f8f9fa;
+        }
+
+        .tech-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .tech-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+            background: linear-gradient(135deg, #fff, #f8f9fa);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .tech-icon {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, var(--primary-color), #0066cc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            padding: 1rem;
+            border-radius: 50%;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .tech-content {
+            flex: 1;
+        }
+
+        .tech-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .tech-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .tech-list li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #555;
+        }
+
+        .tech-list li::before {
+            content: "•";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .tech-card {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .tech-icon {
+                font-size: 2rem;
+            }
+
+            .tech-list li {
+                text-align: left;
+            }
+        }
+
         .cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -347,6 +516,31 @@
             padding: 2rem;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            margin: -2rem -2rem 1.5rem -2rem;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .card-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
         }
 
         .research-content {
@@ -475,37 +669,124 @@
             <h2>关于我们</h2>
             <div class="cards">
                 <div class="card">
-                    <h3>使命愿景</h3>
-                    <p>推动AI技术创新，促进产业升级，实现智能化转型</p>
+                    <div class="card-image" style="background-image: url('public/images/banner1.jpg');"></div>
+                    <h3>实验室简介</h3>
+                    <p>我们是一家专注于人工智能基础理论研究和应用创新的高校实验室，致力于推动AI技术的学术进步和产业应用。</p>
                 </div>
                 <div class="card">
-                    <h3>核心优势</h3>
-                    <p>拥有顶尖研发团队，深厚的技术积累，丰富的行业经验</p>
-                </div>
-                <div class="card">
+                    <div class="card-image" style="background-image: url('public/images/banner2.jpg');"></div>
                     <h3>发展历程</h3>
-                    <p>持续创新进取，始终走在技术前沿</p>
+                    <p>自成立以来，实验室在多个AI研究领域取得重要突破，发表多篇高水平学术论文，并与多家企业建立了产学研合作。</p>
+                </div>
+                <div class="card">
+                    <div class="card-image" style="background-image: url('public/images/banner3.jpg');"></div>
+                    <h3>团队优势</h3>
+                    <p>拥有一支由教授、博士生导师及优秀研究生组成的研究团队，具备扎实的理论基础和丰富的项目研发经验。</p>
                 </div>
             </div>
         </section>
 
-        <section id="tech" class="section">
+        <section id="tech" class="section tech-section">
             <h2>技术介绍</h2>
-            <div class="cards">
-                <div class="card">
-                    <h3>机器学习</h3>
-                    <p>深度学习、强化学习、自然语言处理</p>
+            <div class="tech-cards">
+                <div class="tech-card">
+                    <div class="tech-icon">🤖</div>
+                    <div class="tech-content">
+                        <h3>机器学习</h3>
+                        <ul class="tech-list">
+                            <li>深度学习：神经网络架构设计与优化</li>
+                            <li>强化学习：智能决策与控制系统</li>
+                            <li>自然语言处理：文本理解与生成</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="card">
-                    <h3>计算机视觉</h3>
-                    <p>图像识别、目标检测、视频分析</p>
+                <div class="tech-card">
+                    <div class="tech-icon">👁️</div>
+                    <div class="tech-content">
+                        <h3>计算机视觉</h3>
+                        <ul class="tech-list">
+                            <li>图像识别：多场景物体分类与识别</li>
+                            <li>目标检测：实时目标跟踪与定位</li>
+                            <li>视频分析：动作识别与场景理解</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="card">
+                <div class="tech-card">
                     <h3>智能决策</h3>
                     <p>智能推荐、风险控制、策略优化</p>
                 </div>
             </div>
         </section>
+
+        <section id="seminar" class="section">
+            <h2>AI商业应用研讨会</h2>
+            <div class="seminar-content">
+                <div class="seminar-card">
+                    <h3>2024年春季AI商业应用研讨会</h3>
+                    <div class="seminar-info">
+                        <span class="date">时间：2024年3月15日 14:00-17:00</span>
+                        <span class="location">地点：线上直播</span>
+                    </div>
+                    <p class="seminar-desc">探讨AI在企业数字化转型中的最新应用与实践，聚焦大模型商业落地案例分析。</p>
+                    <a href="#contact" class="btn seminar-btn">报名参加</a>
+                </div>
+                <div class="seminar-card">
+                    <h3>2024年AI产业创新峰会</h3>
+                    <div class="seminar-info">
+                        <span class="date">时间：2024年5月20日 09:00-17:00</span>
+                        <span class="location">地点：待定</span>
+                    </div>
+                    <p class="seminar-desc">汇聚行业专家，共同探讨AI技术创新与产业升级，分享最新研究成果与应用经验。</p>
+                    <a href="#contact" class="btn seminar-btn">预约登记</a>
+                </div>
+            </div>
+        </section>
+
+        <style>
+            .seminar-content {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 2rem;
+                margin-top: 2rem;
+            }
+
+            .seminar-card {
+                background: #fff;
+                padding: 2rem;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease;
+            }
+
+            .seminar-card:hover {
+                transform: translateY(-5px);
+            }
+
+            .seminar-info {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+                margin: 1rem 0;
+                color: #666;
+            }
+
+            .seminar-desc {
+                margin-bottom: 1.5rem;
+                line-height: 1.6;
+            }
+
+            .seminar-btn {
+                display: inline-block;
+                text-decoration: none;
+                text-align: center;
+            }
+
+            @media (max-width: 768px) {
+                .seminar-content {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
 
         <section id="research" class="section">
             <h2>研究成果</h2>
